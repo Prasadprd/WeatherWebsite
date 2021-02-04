@@ -10,10 +10,11 @@ const forecast =(Latitude,Longitude,callback)=>{
             callback('Unable to find location.Check URL',undefined)
         }
         else{
+            console.log(body)
             const temp = body.current.temperature
             const feelsLikeTemp =body.current.feelslike
             
-            let weather='It is currently '+ temp+' degrees. It feels like '+ feelsLikeTemp+' degrees'
+            let weather='It is currently '+ temp+' degrees. It feels like '+ feelsLikeTemp+' degrees.Humidity is'+body.current.humidity + '%'
             callback(undefined,weather)
         }
     })
